@@ -64,7 +64,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"➺[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🔰[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -407,12 +407,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('➕ 𝐀𝐝𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
         ], [
             InlineKeyboardButton('🔍 𝐒𝐞𝐚𝐫𝐜𝐡', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/Knmlpro2_update')
+            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/OKM_ALL')
         ], [
             InlineKeyboardButton('ℹ️ 𝐇𝐞𝐥𝐩', callback_data='help'),
             InlineKeyboardButton('🙃 𝐀𝐛𝐨𝐮𝐭', callback_data='about')
         ], [
-            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/Knmlpro2_group')
+            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -440,7 +440,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/Knmlpro2_update'),
+            InlineKeyboardButton('🤖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/OKM_ALL'),
             InlineKeyboardButton('🔌 𝐒𝐨𝐮𝐫𝐜𝐞', callback_data='source')
         ], [
             InlineKeyboardButton('🏠 𝐇𝐨𝐦𝐞', callback_data='start'),
@@ -643,7 +643,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"🔰[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files

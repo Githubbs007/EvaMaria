@@ -23,7 +23,7 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('🤖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/Knmlpro2')
+                InlineKeyboardButton('🤖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/OKM_ALL')
             ],
             [
                 InlineKeyboardButton('ℹ️ 𝐇𝐞𝐥𝐩', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -31,7 +31,7 @@ async def start(client, message):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2) # 😢 https://github.com/akrcreation2/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await asyncio.sleep(2) # 😢 https://github.com/Githubbs007/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -45,12 +45,12 @@ async def start(client, message):
             InlineKeyboardButton('➕ 𝐀𝐝𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🔍 𝐒𝐞𝐚𝐫𝐜𝐡', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/Knmlpro2_update')
+            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/OKM_ALL')
             ],[
             InlineKeyboardButton('ℹ️ 𝐇𝐞𝐥𝐩', callback_data='help'),
             InlineKeyboardButton('🙃 𝐀𝐛𝐨𝐮𝐭', callback_data='about')
             ],[
-            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/Knmlpro2_group')
+            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -90,12 +90,12 @@ async def start(client, message):
             InlineKeyboardButton('➕ 𝐀𝐝𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
             InlineKeyboardButton('🔍 𝐒𝐞𝐚𝐫𝐜𝐡', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/Knmlpro2_update')
+            InlineKeyboardButton('🔥 𝐔𝐩𝐝𝐚𝐭𝐞𝐬', url='https://t.me/OKM_ALL')
             ],[
             InlineKeyboardButton('ℹ️ 𝐇𝐞𝐥𝐩', callback_data='help'),
             InlineKeyboardButton('😊 𝐀𝐛𝐨𝐮𝐭', callback_data='about')
             ],[
-            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/Knmlpro2_group')
+            InlineKeyboardButton('🔰 𝐉𝐨𝐢𝐧 𝐌𝐚𝐢𝐧 𝐆𝐫𝐨𝐮𝐩 🔰', url='https://t.me/')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -323,7 +323,7 @@ async def delete(bot, message):
         if result.deleted_count:
             await msg.edit('File is successfully deleted from database')
         else:
-            # files indexed before https://github.com/akrcreation2/EvaMaria/commit/f3d2a1bcb155faf44178e5d7a685a1b533e714bf#diff-86b613edf1748372103e94cacff3b578b36b698ef9c16817bb98fe9ef22fb669R39 
+            # files indexed before https://github.com/Githubbs007/EvaMaria/commit/f3d2a1bcb155faf44178e5d7a685a1b533e714bf#diff-86b613edf1748372103e94cacff3b578b36b698ef9c16817bb98fe9ef22fb669R39 
             # have original file name.
             result = await Media.collection.delete_many({
                 'file_name': media.file_name,
